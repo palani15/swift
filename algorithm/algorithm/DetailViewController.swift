@@ -11,7 +11,38 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    
+    
+    @IBOutlet weak var unSortedNumbers: UITextField!
+    
+    @IBOutlet weak var numbers: UITextField!
+    
+    @IBOutlet weak var from: UITextField!
+    
+    @IBOutlet weak var to: UITextField!
+    
+    @IBOutlet weak var sortPicker: UIPickerView!
+    
+    @IBOutlet weak var sortedNumbers: UITextField!
+    
+    @IBOutlet weak var seconds: UILabel!
+    /*@IBOutlet weak var unSortedNumbers: UITextField!
+    @IBOutlet weak var sortPicker: UIPickerView!
+    @IBOutlet weak var sortButton: UIButton!
+    @IBOutlet weak var sortedNumbers: UITextField!
+    @IBOutlet weak var seconds: UILabel!
+    
+    @IBOutlet weak var numbers: UITextField!
+    @IBOutlet weak var from: UITextField!
+    @IBOutlet weak var to: UITextField!*/
+    
 
+    @IBAction func pick(sender: UIButton) {
+    }
+    
+    
+    @IBAction func sort(sender: UIButton) {
+    }
 
     var detailItem: AnyObject? {
         didSet {
