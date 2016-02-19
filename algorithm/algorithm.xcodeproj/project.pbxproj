@@ -15,6 +15,7 @@
 		5F3C84E81C74F21D000F431E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F3C84E61C74F21D000F431E /* LaunchScreen.storyboard */; };
 		5F3C84F31C74F21D000F431E /* algorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3C84F21C74F21D000F431E /* algorithmTests.swift */; };
 		5F3C84FE1C74F21D000F431E /* algorithmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3C84FD1C74F21D000F431E /* algorithmUITests.swift */; };
+		5F3C850C1C76E84B000F431E /* swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3C850B1C76E84B000F431E /* swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5F3C84F91C74F21D000F431E /* algorithmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = algorithmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F3C84FD1C74F21D000F431E /* algorithmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algorithmUITests.swift; sourceTree = "<group>"; };
 		5F3C84FF1C74F21D000F431E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F3C850B1C76E84B000F431E /* swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				5F3C84E41C74F21D000F431E /* Assets.xcassets */,
 				5F3C84E61C74F21D000F431E /* LaunchScreen.storyboard */,
 				5F3C84E91C74F21D000F431E /* Info.plist */,
+				5F3C850B1C76E84B000F431E /* swift.swift */,
 			);
 			path = algorithm;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				5F3C84E01C74F21D000F431E /* DetailViewController.swift in Sources */,
 				5F3C84DE1C74F21D000F431E /* MasterViewController.swift in Sources */,
 				5F3C84DC1C74F21D000F431E /* AppDelegate.swift in Sources */,
+				5F3C850C1C76E84B000F431E /* swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +495,7 @@
 				5F3C85041C74F21D000F431E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F3C85051C74F21D000F431E /* Build configuration list for PBXNativeTarget "algorithmTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				5F3C85071C74F21D000F431E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F3C85081C74F21D000F431E /* Build configuration list for PBXNativeTarget "algorithmUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				5F3C850A1C74F21D000F431E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
