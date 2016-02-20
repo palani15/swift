@@ -26,29 +26,15 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var seconds: UILabel!
     
+    @IBOutlet weak var sortButton: UIButton!
+    
+    var buttonColor: UIColor!
+    
     let sortPickerData: [String] = ["Insertion", "Quick", "Merge", "Selection"]
     
-    @IBAction func pick(sender: UIButton) {
-    }
+    var inputNumbers: [Int?] = []
     
     
-    @IBAction func sort(sender: UIButton) {
-        let s = Sort()
-        seconds.text = s.sayHello() + sortPickerData[sortPicker.selectedRowInComponent(0)]
-        
-        if(unSortedNumbers.text == nil || unSortedNumbers.text!.isEmpty) {
-            let alertViewController = UIAlertController(title: "Numbers not provided", message: "Please Enter the Numbers to be sorted in the TextBox", preferredStyle: UIAlertControllerStyle.Alert)
-            let okAction: UIAlertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { ACTION -> Void in
-                self.unSortedNumbers.backgroundColor = UIColor.lightGrayColor()
-            })
-            alertViewController.addAction(okAction)
-            self.presentViewController(alertViewController, animated: true, completion: nil)
-        }
-        else {
-            let numberArr = unSortedNumbers.text!.componentsSeparatedByString(",").map { Int($0)!}
-            sortedNumbers.text = numberArr[2].description }
-    }
-
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
@@ -71,6 +57,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.configureView()
         self.sortPicker.delegate = self
         self.sortPicker.dataSource = self
+        self.sortButton.enabled = false
+        buttonColor = self.sortButton.backgroundColor!
+        self.sortButton.backgroundColor = UIColor.lightGrayColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,6 +77,61 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView( sortPickerView : UIPickerView, titleForRow row:Int, forComponent component: Int) -> String? {
     return sortPickerData[row]
+    }
+    
+    @IBAction func pick(sender: UIButton) {
+        if(unSortedNumbers.text != nil && !unSortedNumbers.text!.isEmpty) {
+            self.inputNumbers = unSortedNumbers.text!.componentsSeparatedByString(",").map { Int($0)}
+        }
+        if((unSortedNumbers.text == nil || unSortedNumbers.text!.isEmpty) &&
+            ((numbers.text == nil || numbers.text!.isEmpty) || (from.text == nil || from.text!.isEmpty) || (to.text == nil || to.text!.isEmpty))){
+                let alertViewController = UIAlertController(title: "Numbers not provided", message: "Please enter the Numbers to be sorted or Choose random numbers with its range", preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction: UIAlertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { ACTION -> Void in
+                    self.enableTextbox()
+                })
+                alertViewController.addAction(okAction)
+                self.presentViewController(alertViewController, animated: true, completion: nil)
+        }
+        else if(self.inputNumbers.count == 0){
+                let alertViewController = UIAlertController(title: "Valid Numbers not provided", message: "Please enter the Valid Numbers to be sorted or Choose random numbers with its range", preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction: UIAlertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { ACTION -> Void in
+                    
+                })
+                alertViewController.addAction(okAction)
+                self.presentViewController(alertViewController, animated: true, completion: nil)
+        }
+        else {
+            self.sortButton.enabled = true
+            self.sortButton.backgroundColor = buttonColor
+        }
+    }
+    
+    
+    @IBAction func sort(sender: UIButton) {
+        let s = Sort()
+        seconds.text = s.sayHello() + sortPickerData[sortPicker.selectedRowInComponent(0)]
+        if(unSortedNumbers.text == nil || unSortedNumbers.text!.isEmpty) {
+            
+        }
+        else {
+           // let numberArr = unSortedNumbers.text!.componentsSeparatedByString(",").map { Int($0)}
+            //sortedNumbers.text = numberArr[2].description 
+        }
+    }
+
+    func enableTextbox() {
+        self.numbers.enabled = true;
+        self.from.enabled = true;
+        self.to.enabled = true;
+        self.unSortedNumbers.enabled = true;
+        self.numbers.text = nil
+        self.from.text = nil
+        self.to.text = nil
+        self.unSortedNumbers.text = nil
+        self.numbers.backgroundColor = UIColor.whiteColor()
+        self.from.backgroundColor = UIColor.whiteColor()
+        self.to.backgroundColor = UIColor.whiteColor()
+        self.unSortedNumbers.backgroundColor = UIColor.whiteColor()
     }
 }
 
