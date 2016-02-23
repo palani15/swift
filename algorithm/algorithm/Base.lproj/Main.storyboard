@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -32,8 +32,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unsorted #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEs-nG-lYJ">
-                                <rect key="frame" x="20" y="126" width="87" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Unsorted #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEs-nG-lYJ">
+                                <rect key="frame" x="16" y="126" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -149,8 +149,9 @@
                     <connections>
                         <outlet property="chooseLabel" destination="iAQ-og-MS2" id="yfC-6V-hdu"/>
                         <outlet property="from" destination="OIA-ag-1Xa" id="hoG-NQ-Z7L"/>
-                        <outlet property="numberLabel" destination="jFF-BA-mBF" id="gyq-WI-9xF"/>
+                        <outlet property="fromLabel" destination="dSv-yQ-Clh" id="AUp-1s-hfs"/>
                         <outlet property="numbers" destination="b45-Mh-6eC" id="Ehi-JC-def"/>
+                        <outlet property="numbersLabel" destination="jFF-BA-mBF" id="p1P-jc-KgA"/>
                         <outlet property="orLabel" destination="r6n-b1-2nI" id="iEl-XX-RWX"/>
                         <outlet property="pickButton" destination="USc-6z-X6i" id="ghi-NK-oNt"/>
                         <outlet property="seconds" destination="6Bg-V1-NTR" id="N7T-cG-Tk7"/>

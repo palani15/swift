@@ -1,1 +1,18 @@
-/* No Localized Strings */
+/* Ok title for alert box */
+"Ok" = "TOk";
+
+/* no numbers text for alert box */
+"Please enter the numbers to be sorted or Choose random numbers with its range" = "TPlease enter the numbers to be sorted or Choose random numbers with its range";
+
+/* Valid numbers text for alert box */
+"Please enter the valid numbers to be sorted or choose random numbers with its range" = "TPlease enter the valid numbers to be sorted or choose random numbers with its range";
+
+/* sorting title text */
+"Sorting" = "TSorting";
+
+/* valid numbers text title for alert box */
+"Valid numbers not provided" = "TValid numbers not provided";
+
+/* no numbers text title for alert box */
+"numbers not provided" = "Tnumbers not provided";
+

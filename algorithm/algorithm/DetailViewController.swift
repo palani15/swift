@@ -55,23 +55,12 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     var inputNumbers: [Int?] = []
     
-    let noInputValidationErrorTitle = NSLocalizedString("numbers not provided", comment: "no numbers text title for alert box")
-    let noInputValidationErrorMessage = NSLocalizedString("Please enter the numbers to be sorted or Choose random numbers with its range", comment: "no numbers text for alert box")
-    let invalidInputValidationErrorTitle = NSLocalizedString("Valid numbers not provided", comment: "valid numbers text title for alert box")
-    let invalidInputValidationErrorMessage = NSLocalizedString("Please enter the valid numbers to be sorted or choose random numbers with its range", comment: "Valid numbers text for alert box")
-    let okAlertTitle = NSLocalizedString("Ok", comment: "Ok title for alert box")
-    let unsortedLabelText = NSLocalizedString("Unsorted #", comment: "Unsorted Numbers Label text")
-    let orLabelText = NSLocalizedString("or", comment: "or label text")
-    let chooseLabelText = NSLocalizedString("Choose", comment: "choose label text")
-    let numbersLabelText = NSLocalizedString("numbers", comment: "numbers label text")
-    let fromLabelText = NSLocalizedString("From", comment: "from label text")
-    let toLabelText = NSLocalizedString("To", comment: "to label text")
-    let pickButtonText = NSLocalizedString("Pick", comment: "pick button text")
-    let sortingOptionsLabelText = NSLocalizedString("Sorting Options", comment: "sorting options label text")
-    let sortButtonText = NSLocalizedString("Sort", comment: "sort button text")
-    let sortedLabelText = NSLocalizedString("sorted #", comment: "sorted label text")
-    let timeTakenLabelText = NSLocalizedString("Time Taken", comment: "sorted label text")
-    let millisecondLabelText = NSLocalizedString("ms", comment: "millisecond label text")
+    var noInputValidationErrorTitle = NSLocalizedString("numbers not provided", comment: "no numbers text title for alert box")
+    var noInputValidationErrorMessage = NSLocalizedString("Please enter the numbers to be sorted or Choose random numbers with its range", comment: "no numbers text for alert box")
+    var invalidInputValidationErrorTitle = NSLocalizedString("Valid numbers not provided", comment: "valid numbers text title for alert box")
+    var invalidInputValidationErrorMessage = NSLocalizedString("Please enter the valid numbers to be sorted or choose random numbers with its range", comment: "Valid numbers text for alert box")
+    var okAlertTitle = NSLocalizedString("Ok", comment: "Ok title for alert box")
+    
     
     var detailItem: AnyObject? {
         didSet {
@@ -93,19 +82,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
-        
-        unSortedLabel.text = unsortedLabelText
-        orLabel.text = orLabelText
-        chooseLabel.text = chooseLabelText
-        numbersLabel.text = numbersLabelText
-        fromLabel.text = fromLabelText
-        toLabel.text = toLabelText
-        pickButton.setTitle(pickButtonText, forState: UIControlState.Normal)
-        sortingOptionLabel.text = sortingOptionsLabelText
-        sortButton.setTitle(sortButtonText, forState: .Normal)
-        sortedLabel.text = sortedLabelText
-        timeTakenLabel.text = timeTakenLabelText
-        seconds.text = millisecondLabelText
         
         self.sortPicker.delegate = self
         self.sortPicker.dataSource = self

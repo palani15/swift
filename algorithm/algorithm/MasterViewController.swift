@@ -14,7 +14,7 @@ class MasterViewController: UITableViewController {
     var objects = [AnyObject]()
     var controllers = [AnyObject]()
 
-    let sortingTitle = NSLocalizedString("Sorting", comment: "Sorting TitleText")
+    var sortingTitle = NSLocalizedString("Sorting", comment: "sorting title text")
 
     override func viewDidLoad() {
         super.viewDidLoad()
