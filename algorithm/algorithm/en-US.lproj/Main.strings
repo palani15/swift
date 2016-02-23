@@ -1,0 +1,54 @@
+/* Class = "UILabel"; text = "ms"; ObjectID = "6Bg-V1-NTR"; */
+"6Bg-V1-NTR.text" = "ms";
+
+/* Class = "UITableViewController"; title = "Master"; ObjectID = "7bK-jq-Zjz"; */
+"7bK-jq-Zjz.title" = "Master";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Arm-wq-HPj"; */
+"Arm-wq-HPj.text" = "Title";
+
+/* Class = "UILabel"; text = "Sorting Options"; ObjectID = "IGI-yh-OJj"; */
+"IGI-yh-OJj.text" = "Sorting Options";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "JEX-9P-axG"; */
+"JEX-9P-axG.title" = "Detail";
+
+/* Class = "UILabel"; text = "Sorted #"; ObjectID = "KDA-DO-nDm"; */
+"KDA-DO-nDm.text" = "Sorted #";
+
+/* Class = "UIButton"; normalTitle = "Sort"; ObjectID = "NyC-mV-I5e"; */
+"NyC-mV-I5e.normalTitle" = "Sort";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; */
+"RMx-3f-FxP.title" = "Master";
+
+/* Class = "UIButton"; normalTitle = "Pick"; ObjectID = "USc-6z-X6i"; */
+"USc-6z-X6i.normalTitle" = "Pick";
+
+/* Class = "UINavigationItem"; title = "Master"; ObjectID = "Zdf-7t-Un8"; */
+"Zdf-7t-Un8.title" = "Master";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "dSv-yQ-Clh"; */
+"dSv-yQ-Clh.text" = "From";
+
+/* Class = "UILabel"; text = "Time Taken"; ObjectID = "eO3-7V-2uQ"; */
+"eO3-7V-2uQ.text" = "Time Taken";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "fUT-gM-yFY"; */
+"fUT-gM-yFY.text" = "to";
+
+/* Class = "UILabel"; text = "Choose"; ObjectID = "iAQ-og-MS2"; */
+"iAQ-og-MS2.text" = "Choose";
+
+/* Class = "UILabel"; text = "numbers"; ObjectID = "jFF-BA-mBF"; */
+"jFF-BA-mBF.text" = "numbers";
+
+/* Class = "UINavigationItem"; title = "Sorting"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "Sorting";
+
+/* Class = "UILabel"; text = "or"; ObjectID = "r6n-b1-2nI"; */
+"r6n-b1-2nI.text" = "or";
+
+/* Class = "UILabel"; text = "Unsorted #"; ObjectID = "uEs-nG-lYJ"; */
+"uEs-nG-lYJ.text" = "Unsorted #";
+

@@ -14,6 +14,7 @@ class MasterViewController: UITableViewController {
     var objects = [AnyObject]()
     var controllers = [AnyObject]()
 
+    let sortingTitle = NSLocalizedString("Sorting", comment: "Sorting TitleText")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,7 @@ class MasterViewController: UITableViewController {
     }*/
     
     func insertNewObject() {
-        objects.insert("Sorting", atIndex: 0)
+        objects.insert(sortingTitle, atIndex: 0)
         controllers.insert(detailViewController!, atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)

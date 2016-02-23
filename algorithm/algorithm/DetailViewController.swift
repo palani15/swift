@@ -28,12 +28,50 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var sortButton: UIButton!
     
+    @IBOutlet weak var unSortedLabel: UILabel!
+    
+    @IBOutlet weak var orLabel: UILabel!
+    
+    @IBOutlet weak var chooseLabel: UILabel!
+    
+    @IBOutlet weak var numbersLabel: UILabel!
+    
+    @IBOutlet weak var fromLabel: UILabel!
+    
+    @IBOutlet weak var toLabel: UILabel!
+    
+    @IBOutlet weak var pickButton: UIButton!
+    
+    @IBOutlet weak var sortingOptionLabel: UILabel!
+    
+    @IBOutlet weak var sortedLabel: UILabel!
+    
+    @IBOutlet weak var timeTakenLabel: UILabel!
+    
+    
     var buttonColor: UIColor!
     
     let sortPickerData: [String] = ["Insertion", "Quick", "Merge", "Selection"]
     
     var inputNumbers: [Int?] = []
     
+    let noInputValidationErrorTitle = NSLocalizedString("numbers not provided", comment: "no numbers text title for alert box")
+    let noInputValidationErrorMessage = NSLocalizedString("Please enter the numbers to be sorted or Choose random numbers with its range", comment: "no numbers text for alert box")
+    let invalidInputValidationErrorTitle = NSLocalizedString("Valid numbers not provided", comment: "valid numbers text title for alert box")
+    let invalidInputValidationErrorMessage = NSLocalizedString("Please enter the valid numbers to be sorted or choose random numbers with its range", comment: "Valid numbers text for alert box")
+    let okAlertTitle = NSLocalizedString("Ok", comment: "Ok title for alert box")
+    let unsortedLabelText = NSLocalizedString("Unsorted #", comment: "Unsorted Numbers Label text")
+    let orLabelText = NSLocalizedString("or", comment: "or label text")
+    let chooseLabelText = NSLocalizedString("Choose", comment: "choose label text")
+    let numbersLabelText = NSLocalizedString("numbers", comment: "numbers label text")
+    let fromLabelText = NSLocalizedString("From", comment: "from label text")
+    let toLabelText = NSLocalizedString("To", comment: "to label text")
+    let pickButtonText = NSLocalizedString("Pick", comment: "pick button text")
+    let sortingOptionsLabelText = NSLocalizedString("Sorting Options", comment: "sorting options label text")
+    let sortButtonText = NSLocalizedString("Sort", comment: "sort button text")
+    let sortedLabelText = NSLocalizedString("sorted #", comment: "sorted label text")
+    let timeTakenLabelText = NSLocalizedString("Time Taken", comment: "sorted label text")
+    let millisecondLabelText = NSLocalizedString("ms", comment: "millisecond label text")
     
     var detailItem: AnyObject? {
         didSet {
@@ -55,9 +93,24 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        
+        unSortedLabel.text = unsortedLabelText
+        orLabel.text = orLabelText
+        chooseLabel.text = chooseLabelText
+        numbersLabel.text = numbersLabelText
+        fromLabel.text = fromLabelText
+        toLabel.text = toLabelText
+        pickButton.setTitle(pickButtonText, forState: UIControlState.Normal)
+        sortingOptionLabel.text = sortingOptionsLabelText
+        sortButton.setTitle(sortButtonText, forState: .Normal)
+        sortedLabel.text = sortedLabelText
+        timeTakenLabel.text = timeTakenLabelText
+        seconds.text = millisecondLabelText
+        
         self.sortPicker.delegate = self
         self.sortPicker.dataSource = self
         self.sortButton.enabled = false
+        inputNumbers.removeAll()
         buttonColor = self.sortButton.backgroundColor!
         self.sortButton.backgroundColor = UIColor.lightGrayColor()
     }
@@ -85,20 +138,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
         if((unSortedNumbers.text == nil || unSortedNumbers.text!.isEmpty) &&
             ((numbers.text == nil || numbers.text!.isEmpty) || (from.text == nil || from.text!.isEmpty) || (to.text == nil || to.text!.isEmpty))){
-                let alertViewController = UIAlertController(title: "Numbers not provided", message: "Please enter the Numbers to be sorted or Choose random numbers with its range", preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction: UIAlertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { ACTION -> Void in
+                let okAction: UIAlertAction = UIAlertAction(title: okAlertTitle, style: UIAlertActionStyle.Default, handler: { ACTION -> Void in
                     self.enableTextbox()
                 })
-                alertViewController.addAction(okAction)
-                self.presentViewController(alertViewController, animated: true, completion: nil)
+                self.errorAlert( noInputValidationErrorTitle , message: noInputValidationErrorMessage, okAction: okAction)
         }
-        else if(self.inputNumbers.count == 0){
-                let alertViewController = UIAlertController(title: "Valid Numbers not provided", message: "Please enter the Valid Numbers to be sorted or Choose random numbers with its range", preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction: UIAlertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { ACTION -> Void in
-                    
-                })
-                alertViewController.addAction(okAction)
-                self.presentViewController(alertViewController, animated: true, completion: nil)
+        else if(unSortedNumbers.text != nil && !unSortedNumbers.text!.isEmpty && self.inputNumbers.count == 0){
+            self.errorAlert(invalidInputValidationErrorTitle, message: invalidInputValidationErrorMessage)
         }
         else {
             self.sortButton.enabled = true
@@ -132,6 +178,20 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.from.backgroundColor = UIColor.whiteColor()
         self.to.backgroundColor = UIColor.whiteColor()
         self.unSortedNumbers.backgroundColor = UIColor.whiteColor()
+    }
+    
+    func errorAlert(title : String, message : String, okAction : UIAlertAction) {
+        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertViewController.addAction(okAction)
+        self.presentViewController(alertViewController, animated: true, completion: nil)
+    }
+    
+    func errorAlert(title : String, message : String) {
+        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: okAlertTitle, style: UIAlertActionStyle.Default, handler: { ACTION -> Void in
+        })
+        alertViewController.addAction(okAction)
+        self.presentViewController(alertViewController, animated: true, completion: nil)
     }
 }
 
